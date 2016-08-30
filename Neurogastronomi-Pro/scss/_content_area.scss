@@ -447,17 +447,17 @@ li.comment {
 --------------------------------------------- */
 
 .featured-image .site-header {
-	margin-top:40px;
+	margin-top:0px;
 	background-color: transparent;
 }
 
 .featured-image .site-header.dark {
-	margin-top:40px;
+	margin-top:0px;
 	background-color: $color-grey;
 }
 
 .featured-section {
-	margin-top:40px;
+	margin-top:0px;
     background-attachment: scroll;
     background-color: #000000;
     background-position: 50% 50%;
@@ -476,13 +476,13 @@ li.comment {
 	
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d1d1d0+0,ffffff+100&1+0,0+100 */
 
-background: -moz-linear-gradient(top,  rgba(209,209,208,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+background: -moz-linear-gradient(top,  rgba(29, 32, 41,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
 
-background: -webkit-linear-gradient(top,  rgba(209,209,208,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+background: -webkit-linear-gradient(top,  rgba(29, 32, 41,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
 
-background: linear-gradient(to bottom,  rgba(209,209,208,1) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+background: linear-gradient(to bottom,  rgba(29, 32, 41,1) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1d1d0', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d2029', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
 
 
 

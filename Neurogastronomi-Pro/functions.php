@@ -38,6 +38,7 @@ function genesis_sample_google_fonts() {
 	// wp_enqueue_script( 'mono-flip', get_bloginfo( 'stylesheet_directory' ) . '/js/flip.js', array( 'jquery' ), '1.0.0' );
 	wp_enqueue_script( 'mono-flip', get_bloginfo( 'stylesheet_directory' ) . '/js/mono_flip.js', array( 'jquery' ), '1.0.0' );
 	wp_enqueue_script( 'moono-timeline', get_bloginfo( 'stylesheet_directory' ) . '/js/timeline.js', array( 'jquery' ), '1.0.0' );
+	wp_enqueue_script( 'countdown', get_stylesheet_directory_uri() . '/js/countdown.js', array( 'jquery' ), '1.0.0' );
 
 }
 
@@ -240,6 +241,7 @@ function mono_flexible_grids() {
 			$rowbutton = get_sub_field('row_button');
 			$rowbuttonmanual = get_sub_field('row_button_manual_url');
 			$rowtext = 	get_sub_field('row_button_text');
+			$coll = get_sub_field('columns_no');
 
         	if( get_row_layout() == 'row_setup' ):
 				
@@ -264,7 +266,7 @@ function mono_flexible_grids() {
 				echo '<div class="wrap">';
 					
 					
-					$row = 	get_sub_field('columns');
+					
 					$selected = get_sub_field('background_colour');
 					$content = get_sub_field('content');
 					
@@ -273,12 +275,13 @@ function mono_flexible_grids() {
 							
 							
 							if (get_sub_field('content')){
-							echo '<section class="coll' . $row['columns']. ' wysiwyg">';
+							echo '<section class="coll' . $coll . ' wysiwyg">';
 							
 								
 								
 							
 								the_sub_field('content');
+								
 								
 								if (get_sub_field('button_text_content')){
 									echo '<a class="button" href="';
@@ -296,13 +299,13 @@ function mono_flexible_grids() {
 							}
 							
 							if (get_sub_field('widget_content')){
-							echo '<section class="coll' . $row['columns']. '">';
+							echo '<section class="coll' . $coll. '">';
 								the_sub_field('widget_content');
 							echo '</section>';
 							}
 							
 							if (get_row_layout() == 'timeline'){
-							echo '<section id="cd-timeline" class="coll' . $row['columns']. ' cd-container">';
+							echo '<section id="cd-timeline" class="coll' . $coll. ' cd-container">';
 									$items = get_field( 'timeline_item', 'option' );
 									
 									if($items) {
@@ -334,14 +337,14 @@ function mono_flexible_grids() {
 								
 								if( get_sub_field('content') && $selected == 'Non'  || $selected == 'Non Black'  || $selected == 'Non Red'  || $selected == 'Non Grey') {
 									
-									echo '<section class="coll' . $row['columns']. ' backimage" style="background-image: url(';
+									echo '<section class="coll' . $coll. ' backimage" style="background-image: url(';
 										the_sub_field('image_link');
 									echo ');">';
 									echo '</section>';
 									
 									}else{
 										
-									echo '<section class="coll' . $row['columns']. '">';
+									echo '<section class="coll' . $coll. '">';
 										echo '<img src="';
 											the_sub_field('image_link');
 										echo '">';
@@ -352,7 +355,7 @@ function mono_flexible_grids() {
 							}
 							
 							if (get_sub_field('video_embeding_code')){
-							echo '<section class="coll' . $row['columns']. '">';
+							echo '<section class="coll' . $coll. '">';
 								the_sub_field('video_embeding_code');
 							echo '</section>';
 							}
@@ -361,7 +364,7 @@ function mono_flexible_grids() {
 								
 								$location = get_sub_field('google_map');
 								
-							echo '<section class="coll' . $row['columns']. '">';
+							echo '<section class="coll' . $coll. '">';
 								echo '<div class="acf-map">
 		 								<div class="marker" data-lat="'.$location['lat'].'" data-lng="'.$location['lng'].'"></div>
 		 							  </div>';
@@ -370,7 +373,7 @@ function mono_flexible_grids() {
 							
 							if (get_sub_field('case_thumbnail')){
 								
-								echo '<section class="coll' . $row['columns']. ' case_preview">';
+								echo '<section class="coll' . $coll. ' case_preview">';
 									echo '<a href="';
 											the_sub_field('case_link');
 									echo '">';
@@ -416,6 +419,18 @@ function mono_flexible_grids() {
 			}
 			endif;
 			$loopCount ++;
+			
+			if( get_row_layout() == 'full_screen_image' ):
+				echo '<article class="">
+					<div class="featured-section" style="background-image:url('; 
+					the_sub_field('full_screen_back_image');
+					echo');"><div class="image-section">';
+					
+						echo '<div class="slide_content">';
+							the_sub_field('full_screen_content');
+					
+				echo '</div></div></div></archive>';
+			endif;
 			
 			if( get_row_layout() == 'bindslev_team' ):
 				$teamheadline = get_field( 'team_headline', 'option' );
