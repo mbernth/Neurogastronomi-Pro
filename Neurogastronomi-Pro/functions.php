@@ -421,15 +421,15 @@ function mono_flexible_grids() {
 			$loopCount ++;
 			
 			if( get_row_layout() == 'full_screen_image' ):
-				echo '<article class="">
+				echo '<article class="gridcontainer fullscreen Black">
 					<div class="featured-section" style="background-image:url('; 
 					the_sub_field('full_screen_back_image');
 					echo');"><div class="image-section">';
 					
-						echo '<div class="slide_content">';
+						echo '<div class="slide_content animation-moveUp">';
 							the_sub_field('full_screen_content');
 					
-				echo '</div></div></div></archive>';
+				echo '</div></div></div></article>';
 			endif;
 			
 			if( get_row_layout() == 'bindslev_team' ):

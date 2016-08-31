@@ -365,41 +365,42 @@
 ---------------------------------------------------------------------------------------------------- */
 
 div#countdown{
-	color: $color-white;
+	margin:0 auto;
+	width:90%;
+	max-width:960px;
 }
 
-div#countdown p{
+div#countdown span{
 	width: 100%;
 	display: inline-block;
 	text-align: center;
-	color:$color-primary-two;
+	color:$color-white;
 	margin-bottom:0;
-	padding:36px 0;
+	padding:25% 0;
 }
 
-p.numbers{
+span.numbers{
 	width: 100%;
-	background-color: rgba(255, 255, 255, .85);
+	background-color: rgba(255, 255, 255, .55);
 	font-weight: 700;
-	font-size:48px;
-	@include font(4.8, 4.8);
+	@include font(6.8, 6.8);
 }
 
-div#countdown p.strings{
+div#countdown span.strings{
+	margin-top:4px;
 	width: 100%;
 	height: auto;
 	padding: 10px 30px;
-	background-color: rgba(255, 255, 255, .75);
+	color:$color-primary-one;
+	background-color: rgba(255, 255, 255, .45);
 	@include font(1.4, 1.4);
 	font-weight:700;
 	text-transform:uppercase;
 	padding:10px 0;
-	border-top:2px solid $color-primary-two;
 }
 
 div.cd-box{
-	@include grid(4, 15, 1280);
-	height: 210px;
+	@include grid(4, 15, 960);
 	background: transparent;
 	float: left;
 }

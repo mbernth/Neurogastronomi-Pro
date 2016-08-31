@@ -14,7 +14,7 @@
 }
 
 .genesis-nav-menu a {
-	color: $color-black;
+	color: $color-white;
 	text-decoration: none;
 	display: block;
 	padding-left:15px;
@@ -28,9 +28,9 @@
 
 .genesis-nav-menu a:hover,
 .genesis-nav-menu a:focus{
-	color: $color-black;
+	color: $color-primary-two;
 	text-decoration: none;
-	border-color:$color-black;
+	border-color:$color-primary-two;
 }
 
 .genesis-nav-menu .current-menu-item > a,
@@ -166,14 +166,14 @@
 }
 
 .nav-primary .genesis-nav-menu a {
-	color: $color-black;
+	color: $color-white;
 	text-decoration: none;
 }
 
 .nav-primary .genesis-nav-menu a:hover,
 .nav-primary .genesis-nav-menu a:focus,
 .nav-primary .genesis-nav-menu .current-menu-item > a {
-	color: $color-black;
+	color: $color-primary-two;
 	text-decoration: none;
 }
 

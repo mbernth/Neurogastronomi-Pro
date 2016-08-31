@@ -3,11 +3,10 @@
 /* # Slider
 --------------------------------------------------- */
 .slide_content{
-    bottom: 40%;
+    bottom: 25%;
 }
 
 .slide_content h2{
-	@include font(4.6, 4.6);
 	max-width:1100px;
 }
 
@@ -50,8 +49,6 @@ body {
 --------------------------------------------- */
 	
 .title-area .site-title > a {
-    width: 150px;
-    height: 30px;
 }
 
 .header-full-width .title-area {

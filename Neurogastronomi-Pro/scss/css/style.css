@@ -240,6 +240,9 @@ MIXINS
 /* Golden */
 /* 100% Golden */
 /* Golden */
+/* Green */
+/* 100% Green */
+/* Green */
 /* Typography
 --------------------------------------------- */
 /* Primary Font Faminly */
@@ -5223,47 +5226,48 @@ img.alignright,
 /* Countdown
 ---------------------------------------------------------------------------------------------------- */
 div#countdown {
-  color: #ffffff; }
+  margin: 0 auto;
+  width: 90%;
+  max-width: 960px; }
 
-div#countdown p {
+div#countdown span {
   width: 100%;
   display: inline-block;
   text-align: center;
-  color: #a56927;
+  color: #ffffff;
   margin-bottom: 0;
-  padding: 36px 0; }
+  padding: 25% 0; }
 
-p.numbers {
+span.numbers {
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.55);
   font-weight: 700;
-  font-size: 48px;
-  font-size: 48px;
-  font-size: 4.8rem;
-  line-height: 48px;
-  line-height: 4.8rem; }
+  font-size: 68px;
+  font-size: 6.8rem;
+  line-height: 68px;
+  line-height: 6.8rem; }
 
-div#countdown p.strings {
+div#countdown span.strings {
+  margin-top: 4px;
   width: 100%;
   height: auto;
   padding: 10px 30px;
-  background-color: rgba(255, 255, 255, 0.75);
+  color: #1d2029;
+  background-color: rgba(255, 255, 255, 0.45);
   font-size: 14px;
   font-size: 1.4rem;
   line-height: 14px;
   line-height: 1.4rem;
   font-weight: 700;
   text-transform: uppercase;
-  padding: 10px 0;
-  border-top: 2px solid #a56927; }
+  padding: 10px 0; }
 
 div.cd-box {
-  width: 24.12109375%;
-  height: 210px;
+  width: 23.828125%;
   background: transparent;
   float: left; }
   div.cd-box:nth-child(n) {
-    margin-right: 1.171875%; }
+    margin-right: 1.5625%; }
   div.cd-box:nth-child(4n) {
     margin-right: 0; }
 
@@ -5994,7 +5998,7 @@ div.cd-box {
 --------------------------------------------- */
 .title-area {
   float: left;
-  padding: 20px 0;
+  padding: 25px 0;
   width: 200px; }
 
 .header-full-width .title-area {
@@ -6017,8 +6021,8 @@ div.cd-box {
 .title-area .site-title > a {
   display: block;
   background: url(images/neurogastronomi_logo.svg) no-repeat left top;
-  width: 188px;
-  height: 38px;
+  width: 350px;
+  height: 23px;
   margin-bottom: 0px;
   text-indent: -9999px; }
 
@@ -6458,7 +6462,7 @@ body.has-active-menu {
   text-align: left; }
 
 .genesis-nav-menu a {
-  color: #11161c;
+  color: #ffffff;
   text-decoration: none;
   display: block;
   padding-left: 15px;
@@ -6471,9 +6475,9 @@ body.has-active-menu {
 
 .genesis-nav-menu a:hover,
 .genesis-nav-menu a:focus {
-  color: #11161c;
+  color: #a56927;
   text-decoration: none;
-  border-color: #11161c; }
+  border-color: #a56927; }
 
 .genesis-nav-menu .current-menu-item > a,
 .genesis-nav-menu .current-menu-parent > a {
@@ -6580,13 +6584,13 @@ body.has-active-menu {
   max-width: 100%; }
 
 .nav-primary .genesis-nav-menu a {
-  color: #11161c;
+  color: #ffffff;
   text-decoration: none; }
 
 .nav-primary .genesis-nav-menu a:hover,
 .nav-primary .genesis-nav-menu a:focus,
 .nav-primary .genesis-nav-menu .current-menu-item > a {
-  color: #11161c;
+  color: #a56927;
   text-decoration: none; }
 
 .nav-primary .genesis-nav-menu .sub-menu a {
@@ -7095,11 +7099,11 @@ li.comment {
 
 .image-section {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d1d1d0+0,ffffff+100&1+0,0+100 */
-  background: -moz-linear-gradient(top, #1d2029 0%, rgba(255, 255, 255, 0) 100%);
+  background: -moz-linear-gradient(top, rgba(29, 32, 41, 0.75) 0%, rgba(29, 32, 41, 0) 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #1d2029 0%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-linear-gradient(top, rgba(29, 32, 41, 0.75) 0%, rgba(29, 32, 41, 0) 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #1d2029 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to bottom, rgba(29, 32, 41, 0.75) 0%, rgba(29, 32, 41, 0) 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d2029', endColorstr='#00ffffff',GradientType=0 );
   /* IE6-9 */
@@ -7805,7 +7809,7 @@ Pin Page
 /* # Site Footer
 ---------------------------------------------------------------------------------------------------- */
 .site-footer {
-  background-color: #a56927;
+  background-color: #1d2029;
   font-size: 10px;
   font-size: 1rem;
   line-height: 12px;
@@ -7836,7 +7840,7 @@ Pin Page
 --------------------------------------------------- */
 .home-section .site-header {
   margin-top: 0px;
-  background-color: transparent; }
+  background-color: #1d2029; }
 
 .home-section .site-header.dark {
   margin-top: 0px;
@@ -7850,29 +7854,51 @@ Pin Page
   width: 80%;
   left: 10%;
   text-align: center;
-  bottom: 45%;
-  margin: 0 0 -50px 0; }
+  bottom: 35%;
+  margin: 0 0 -50px 0;
+  color: #ffffff; }
+
+.slide_content h2,
+.slide_content h3 {
+  color: #dfe1df; }
+
+.full-width-content .gridcontainer.fullscreen.Black {
+  padding: 0px; }
+
+.full-width-content .gridcontainer.fullscreen.Black .slide_content h1 {
+  font-size: 78px;
+  font-size: 7.8rem;
+  line-height: 78px;
+  line-height: 7.8rem;
+  color: #a56927;
+  text-shadow: 3px 4px 8px rgba(0, 0, 0, 0.5); }
 
 .slide_content h2 {
-  color: #11161c;
-  font-size: 66px;
-  font-size: 6.6rem;
-  line-height: 66px;
-  line-height: 6.6rem;
-  font-weight: 200;
   text-transform: uppercase;
-  max-width: 1600px;
+  max-width: 1500px;
   margin: 0 auto;
   word-wrap: break-word; }
 
 .slide_content p {
-  margin: 60px auto;
+  margin: 40px auto;
   width: 60%;
   font-size: 26px;
   font-size: 2.6rem;
   line-height: 30px;
   line-height: 3rem;
-  font-weight: 300; }
+  font-weight: 400;
+  color: #ffffff; }
+
+.full-width-content .gridcontainer.fullscreen.Black .slide_content .button {
+  background-color: #a4b253;
+  color: #ffffff;
+  text-transform: uppercase; }
+
+.gridcontainer .slide_content .button:before,
+.gridcontainer .slide_content .button:after,
+.gridcontainer .slide_content .button span:before,
+.gridcontainer .slide_content .button span:after {
+  background: #ffffff; }
 
 .active .slide_content {
   animation-delay: 0.5s;
@@ -8310,10 +8336,6 @@ Pin Page
   /* # Slider
   --------------------------------------------------- */
   .slide_content h2 {
-    font-size: 56px;
-    font-size: 5.6rem;
-    line-height: 56px;
-    line-height: 5.6rem;
     max-width: 1000px; }
 
   .slide_content p {
@@ -8566,13 +8588,9 @@ Pin Page
   /* # Slider
   --------------------------------------------------- */
   .slide_content {
-    bottom: 40%; }
+    bottom: 25%; }
 
   .slide_content h2 {
-    font-size: 46px;
-    font-size: 4.6rem;
-    line-height: 46px;
-    line-height: 4.6rem;
     max-width: 1100px; }
 
   .frontpage-icon {
@@ -8611,10 +8629,6 @@ Pin Page
 
   /* ## Title Area
   --------------------------------------------- */
-  .title-area .site-title > a {
-    width: 150px;
-    height: 30px; }
-
   .header-full-width .title-area {
     width: 150px; }
 
@@ -9149,10 +9163,6 @@ Pin Page
   /* # Slider
   --------------------------------------------------- */
   .slide_content h2 {
-    font-size: 40px;
-    font-size: 4rem;
-    line-height: 40px;
-    line-height: 4rem;
     max-width: 960px; }
 
   .slide_content p {
