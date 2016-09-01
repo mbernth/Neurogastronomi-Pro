@@ -371,31 +371,52 @@ function mono_flexible_grids() {
 							echo '</section>';
 							}
 							
-							if (get_sub_field('case_thumbnail')){
+							if (get_sub_field('case_name')){
+								$btn = get_sub_field ( 'case_link' );
+								$thumb = get_sub_field('case_thumbnail');
 								
-								echo '<section class="coll' . $coll. ' case_preview">';
-									echo '<a href="';
-											the_sub_field('case_link');
-									echo '">';
-									echo '<div class="thumb-image">';
-										echo '<img src="';
-											the_sub_field('case_thumbnail');
-										echo '">';
-									echo '</div>';
-									echo '</a>';
+								echo '<section class="coll' . $coll. '">';
+									
+									
 									echo '<div class="entry-content" itemprop="text">
 											<header class="entry-header">
-											<h2 class="entry-title" itemprop="headline">
-												<a href="';
-													the_sub_field('case_link');
-												echo '" rel="bookmark">';
-													the_sub_field('case_name');
-												echo '</a>
-											</h2> 
-											</header>
-											<strong>Kunde: </strong>';
+											<h2 class="entry-title" itemprop="headline">';
+												the_sub_field('case_name');
+									echo '  </h2></header>';
+									
+									echo '	<p><strong>';
+												the_sub_field('article_date');
+									echo '	</strong> / ';
 												the_sub_field('case_client');
-											echo '</div>';
+									echo ', ';
+												the_sub_field('artikel_kategori');
+									echo '</p>';
+									
+									if ($thumb){
+										echo '<div class="thumb-image">';
+											echo '<img src="'. $thumb . '">';
+										echo '</div>';
+									}
+									
+									
+												
+												the_sub_field('article_text');
+												
+												if ($btn){
+		
+													if ($btn['page_link']){
+														echo '<a class="button" href="' . $btn['page_link']. '"><span>';
+													}else{
+														echo '<a class="button" href="' . $btn['page_link']. '" target="_blank""><span>';
+													}
+													echo '' . $btn['button_text']. '';
+													echo '</span></a>';
+		
+												}
+												
+									echo '</div>';
+									
+								
 								echo '</section>';
 								
 							}
@@ -421,6 +442,8 @@ function mono_flexible_grids() {
 			$loopCount ++;
 			
 			if( get_row_layout() == 'full_screen_image' ):
+				$btn = get_sub_field ( 'full_screen_button' );
+						
 				echo '<article class="gridcontainer fullscreen Black">
 					<div class="featured-section" style="background-image:url('; 
 					the_sub_field('full_screen_back_image');
@@ -428,10 +451,42 @@ function mono_flexible_grids() {
 					
 						echo '<div class="slide_content animation-moveUp">';
 							the_sub_field('full_screen_content');
+						
+						
+	
+						if ($btn){
+		
+							if ($btn['page_link']){
+								echo '<a class="button" href="' . $btn['page_link']. '"><span>';
+							}else{
+								echo '<a class="button" href="' . $btn['page_link']. '" target="_blank""><span>';
+							}
+							echo '' . $btn['button_text']. '';
+							echo '</span></a>';
+		
+						}
 					
 				echo '</div></div></div></article>';
 			endif;
 			
+			/* 
+			if( get_row_layout() == 'blog_posts' ):
+				$term = get_field('blog_posts');
+				
+				echo '<article class="gridcontainer White"><div class="wrap"><div class="coll1">';
+					echo '<h1>Hello world!</h1>';
+					
+					if( $term ):
+
+				echo ''. $term['name'] .'';
+				echo '' . $term['description'] . '';
+
+				endif;
+					
+				echo '</div></div></article>';
+			endif;
+			*/
+			/*
 			if( get_row_layout() == 'bindslev_team' ):
 				$teamheadline = get_field( 'team_headline', 'option' );
 				$rows = get_field( 'team', 'option' );
@@ -525,6 +580,7 @@ function mono_flexible_grids() {
 				}
 				
 			endif;
+			*/
 			
     	endwhile;
 	
@@ -558,6 +614,33 @@ function single_post_featured_image() {
 	endif;
 	
 }
+
+//* Post button
+// =====================================================================================================================
+
+// check if the flexible content field has rows of data
+add_action( 'genesis_entry_content', 'mono_post_button', 15 );
+function mono_post_button() {
+	$btntype = get_field( 'button_type' );
+	$btntext = get_field( 'button_text' );
+	$btnpage = get_field( 'page_link' );
+	$btnurl = get_field( 'url_link' );
+	
+	if ($btntype){
+		
+		if ($bntpage){
+			echo '<a class="button" href="' .$bntpage. '"><span>';
+		}else{
+			echo '<a class="button" href="' .$btnurl. '" target="_blank""><span>';
+		}
+			echo '' .$btntext. '';
+			echo '</span></a>';
+		
+	}
+	
+}
+
+// =====================================================================================================================
 
 //* Enqueue scripts and styles
 add_action( 'wp_enqueue_scripts', 'enqueue_scripts_featured_image' );

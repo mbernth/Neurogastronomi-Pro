@@ -31,9 +31,11 @@
 --------------------------------------------- */
 
 .featured-content .entry {
-	border-bottom: 2px solid $color-white;
-	margin-bottom: 20px;
-	padding: 0 0 24px;
+	border-bottom: 0px solid $color-black;
+	padding: 0 0 120px;
+}
+.featured-content .entry:last-child{
+	border-bottom:none;
 }
 
 .footer-widgets .entry {
@@ -41,6 +43,17 @@
 }
 
 .featured-content .entry-title {
-	font-size: 20px;
-	font-size: 2rem;
+	margin-bottom:20px;
+}
+
+.full-width-content .widget-wrap .entry-meta{
+	padding-bottom:10px;
+	border-bottom: 1px solid $color-black;
+}
+.full-width-content .widget-wrap .entry-time{
+	font-weight:700;
+}
+
+.full-width-content .widget-wrap .entry-content{
+	padding-top:40px;
 }

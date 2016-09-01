@@ -4561,6 +4561,9 @@ body div#ui-datepicker-div[style] {
   width: 90%;
   max-width: 1328px; }
 
+.full-width-content .widget-wrap .entry {
+  width: 100%; }
+
 .full-width-content .gridcontainer.team .wrap {
   max-width: 872px; }
 
@@ -4904,16 +4907,27 @@ img.alignright,
 /* ## Featured Content
 --------------------------------------------- */
 .featured-content .entry {
-  border-bottom: 2px solid #ffffff;
-  margin-bottom: 20px;
-  padding: 0 0 24px; }
+  border-bottom: 0px solid #11161c;
+  padding: 0 0 120px; }
+
+.featured-content .entry:last-child {
+  border-bottom: none; }
 
 .footer-widgets .entry {
   border-bottom: 1px dotted #11161c; }
 
 .featured-content .entry-title {
-  font-size: 20px;
-  font-size: 2rem; }
+  margin-bottom: 20px; }
+
+.full-width-content .widget-wrap .entry-meta {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #11161c; }
+
+.full-width-content .widget-wrap .entry-time {
+  font-weight: 700; }
+
+.full-width-content .widget-wrap .entry-content {
+  padding-top: 40px; }
 
 /*
 - Plugins
@@ -6687,9 +6701,6 @@ body.has-active-menu {
 .entry {
   margin-bottom: 40px; }
 
-.content .entry {
-  background-color: #ffffff; }
-
 .gridcontainer p:last-child,
 .entry-content p:last-child {
   margin-bottom: 0; }
@@ -6944,7 +6955,7 @@ p.entry-meta {
 
 .entry-categories,
 .entry-tags {
-  display: block; }
+  display: inline-block; }
 
 .entry-comments-link::before {
   content: "\2014";
