@@ -611,6 +611,37 @@ function mono_flexible_grids() {
 
 }
 
+// check if the Push content field has data
+// =====================================================================================================================
+add_action( 'genesis_after', 'mono_push_content', 15 );
+function mono_push_content() {
+	$rows = get_field( 'push_content' );
+			
+		if($rows) {
+			
+			echo '<div class="overlay overlay-contentpush">';
+			echo '<button type="button" class="overlay-close">Close</button>';
+			echo '' . $rows. '';
+			echo '</div>';
+									  
+		}
+		
+}
+
+add_action( 'wp_enqueue_scripts', 'push_scripts_jquery' );
+function push_scripts_jquery() {
+	$pushcontent = get_field('content_row');
+	$push = get_sub_field( 'push_content' );  //this is the ACF instruction to get everything in the repeater field
+		
+		if($pushcontent){
+		if(get_sub_field( 'push_content' )) {
+			wp_enqueue_script( 'push-modernizr-script', get_bloginfo( 'stylesheet_directory' ) . '/js/modernizr.custom.push.js', array( 'jquery' ), '1.0.0' );
+			wp_enqueue_script( 'classie-script', get_bloginfo( 'stylesheet_directory' ) . '/js/classie.js', array( 'jquery' ), '1.0.0', true );
+			wp_enqueue_script( 'push-script', get_stylesheet_directory_uri() . '/js/push.js', array( 'jquery' ), '1.0.0', true );
+		}
+		}
+}
+
 
 //* Featured Image
 // =====================================================================================================================
