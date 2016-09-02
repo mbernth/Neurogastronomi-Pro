@@ -219,6 +219,51 @@ p.entry-meta {
 	margin-right:8px;
 }
 
+/* # Slider
+--------------------------------------------------- */
+
+.full-width-content .gridcontainer.fullscreen.Black .slide_content h1 {
+	@include font(3.8, 3.8);
+}
+
+.full-width-content .gridcontainer.fullscreen.Black .slide_content h2 {
+	@include font(2.0, 2.0);
+}
+
+.full-width-content .gridcontainer.fullscreen.Black .slide_content h3 {
+	@include font(1.8, 1.8);
+}
+
+.slide_content h2{
+	max-width:580px;
+}
+
+
+/* Countdown
+--------------------------------------------------- */
+
+div#countdown{
+	max-width:500px;
+}
+
+
+div#countdown span{
+	padding:20% 0;
+}
+
+span.numbers{
+	@include font(3.4, 3.4);
+}
+
+div#countdown span.strings{
+	margin-top:2px;
+	@include font(1.0, 1.0);
+}
+
+div.cd-box{
+	@include grid(4, 5, 500);
+}
+
 @media only screen and (orientation: landscape){
 	.slide_content p{
 		display:none;

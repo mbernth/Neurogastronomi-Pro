@@ -382,6 +382,7 @@ div#countdown span{
 span.numbers{
 	width: 100%;
 	background-color: rgba(255, 255, 255, .55);
+	text-shadow: 3px 4px 8px rgba(0, 0, 0, 0.15);
 	font-weight: 700;
 	@include font(6.8, 6.8);
 }

@@ -29,6 +29,10 @@
 	background-color: $color-grey;
 }
 
+.home-section .site-header{
+	background-color: transparent;
+}
+
 /* # Slider
 --------------------------------------------------- */
 
@@ -46,6 +50,10 @@
 
 /* # Site Navigation
 ---------------------------------------------------------------------------------------------------- */
+
+.genesis-nav-menu {
+	@include font(1.4, 1.4);
+}
 
 .responsive-menu-icon {
 	float: right;
@@ -72,6 +80,11 @@
 	transition:         all .4s ease-in-out;
 }
 
+.site-header ul.genesis-nav-menu {
+	margin:0 auto;
+	width:100%;
+}
+
 .nav-primary {
 	float:none;
 }
@@ -90,7 +103,7 @@
 }
 
 ul.genesis-nav-menu li{
-	background:shade($color-grey, 5%);
+	background:rgba(29, 32, 41, 0.95);
 }
 ul.genesis-nav-menu li li{
 	background:$color-grey;
@@ -104,6 +117,12 @@ ul.genesis-nav-menu li li{
 .genesis-nav-menu.responsive-menu .menu-item,
 .responsive-menu-icon {
 	display: block;
+}
+.genesis-nav-menu.responsive-menu .menu-item {
+	border-top:1px solid rgba(223, 225, 223, 0.45);
+}
+.genesis-nav-menu.responsive-menu .menu-item:last-child {
+	border-bottom:1px solid rgba(223, 225, 223, 0.45);
 }
 
 .genesis-nav-menu.responsive-menu .menu-item {
@@ -120,7 +139,7 @@ ul.genesis-nav-menu li li{
 .genesis-nav-menu.responsive-menu a:hover {
 	background: none;
 	line-height: 1;
-	padding: 16px 20px;
+	padding: 16px 5%;
 }
 	
 .genesis-nav-menu.responsive-menu .menu-item-has-children {

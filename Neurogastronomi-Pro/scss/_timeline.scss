@@ -4,6 +4,25 @@
 .cd-container {
 
 }
+.site-inner .gridcontainer .cd-timeline-content .button {
+	margin-top:0px;
+	float:right;
+}
+
+.site-inner .gridcontainer .cd-timeline-block:nth-child(even) .cd-timeline-content .button {
+	float:left;
+}
+
+
+.gridcontainer .cd-timeline-content a.button {
+	@include font(1.4, 2.2);
+	max-width:200px;
+}
+
+.gridcontainer .cd-timeline-content a.button span{
+	padding: 12px 16px;
+}
+
 .cd-container::after {
   /* clearfix */
   content: '';
@@ -94,7 +113,7 @@
   margin-top: -12px;
 }
 .cd-timeline-img.cd-picture {
-  background: $color-primary-two;
+  background: $color-primary-one;
 }
 .Black .cd-timeline-img.cd-picture,
 .Red .cd-timeline-img.cd-picture {
@@ -189,7 +208,7 @@
 .cd-timeline-content {
   position: relative;
   margin-left: 60px;
-  border-top: 5px solid $color-primary-two;
+  border-top: 5px solid $color-primary-one;
   padding-top:45px;
 }
 .Black .cd-timeline-content,
@@ -220,7 +239,7 @@
 .cd-timeline-content .cd-date {
 	@include font(1.4, 2.2);
 	font-weight:600;
-	color:$color-primary-two;
+	color:$color-primary-one;
 }
 
 .Black .cd-timeline-content .cd-date,
@@ -243,7 +262,7 @@
 
 @media only screen and (min-width: 768px) {
   .cd-timeline-content h2 {
-	  @include font(1.8, 2.6);
+	  @include font(2.4, 3.2);
 	  font-weight: 600;
 	  margin: 0 0 10px 0;
   }

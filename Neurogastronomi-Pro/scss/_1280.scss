@@ -28,7 +28,7 @@ body {
 }
 
 .site-header {
-	position:relative;
+	position: absolute;
 	margin-top:0px;
 }
 .has-push-top .site-header {
@@ -80,27 +80,47 @@ body {
     height: 17px;
 }
 
-/* ## SLIDE AND PUSH MENUS COMPONENT
+/* # Slider
+--------------------------------------------------- */
+
+.full-width-content .gridcontainer.fullscreen.Black .slide_content h1 {
+	@include font(5.8, 5.8);
+}
+
+.full-width-content .gridcontainer.fullscreen.Black .slide_content h2 {
+	@include font(2.2, 2.2);
+}
+
+.full-width-content .gridcontainer.fullscreen.Black .slide_content h3 {
+	@include font(2.0, 2.0);
+}
+
+.slide_content h2{
+	max-width:960px;
+}
 
 
-.c-menu--push-top {
-  top: 0;
-  left: 0;
-  transform: translateY(-$menu-height);
-  height:auto;
-  -webkit-transition: all 0.5s ease-in-out;
-	-moz-transition:    all 0.5s ease-in-out;
-	-ms-transition:     all 0.5s ease-in-out;
-	-o-transition:      all 0.5s ease-in-out;
-	transition:         all 0.5s ease-in-out;
+/* Countdown
+--------------------------------------------------- */
+
+div#countdown{
+	max-width:768px;
 }
-.c-menu--push-top.is-active {
-  transform: translateY(0);
+
+
+div#countdown span{
+	padding:20% 0;
 }
-.o-wrapper.has-push-top {
-  transform: translateY($menu-height);
+
+span.numbers{
+	@include font(4.2, 4.2);
 }
---------------------------------------------- */
+
+div.cd-box{
+	@include grid(4, 10, 768);
+}
+
+
 
 /* # Structure and Layout
 --------------------------------------------- */

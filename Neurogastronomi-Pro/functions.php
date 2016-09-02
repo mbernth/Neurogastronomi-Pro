@@ -308,9 +308,12 @@ function mono_flexible_grids() {
 							echo '<section id="cd-timeline" class="coll' . $coll. ' cd-container">';
 									$items = get_field( 'timeline_item', 'option' );
 									
+									
 									if($items) {
 										
 										foreach($items as $item) {
+											
+											$itembtn = $item['item_button_link'];
 											
 											if ($item['hide_timeline_item']){
 				
@@ -321,8 +324,22 @@ function mono_flexible_grids() {
 													 	<div class="cd-timeline-img cd-picture"></div>
 														<div class="cd-timeline-content">
 															<h2>' . $item['item_headline'] .'</h2>
-															' . $item['item_text'] .'
-															<span class="cd-date">' . $item['item_date'] .'</span>
+															<p><strong>' . $item['item_source'] .'</strong> / ' . $item['item_category'] .'</p>
+															' . $item['item_text'] .'';
+																											
+															if ($itembtn){
+		
+																if ($itembtn['page_link']){
+																	echo '<a class="button" href="' . $itembtn['page_link']. '"><span>';
+																}else{
+																	echo '<a class="button" href="' . $itembtn['url_link']. '" target="_blank""><span>';
+																}
+																echo '' . $itembtn['button_text']. '';
+																echo '</span></a>';
+		
+															}
+								
+												echo '		<span class="cd-date">' . $item['item_date'] .'</span>
 														</div>
 													</div>';
 											}
@@ -407,7 +424,7 @@ function mono_flexible_grids() {
 													if ($btn['page_link']){
 														echo '<a class="button" href="' . $btn['page_link']. '"><span>';
 													}else{
-														echo '<a class="button" href="' . $btn['page_link']. '" target="_blank""><span>';
+														echo '<a class="button" href="' . $btn['url_link']. '" target="_blank""><span>';
 													}
 													echo '' . $btn['button_text']. '';
 													echo '</span></a>';
@@ -459,7 +476,7 @@ function mono_flexible_grids() {
 							if ($btn['page_link']){
 								echo '<a class="button" href="' . $btn['page_link']. '"><span>';
 							}else{
-								echo '<a class="button" href="' . $btn['page_link']. '" target="_blank""><span>';
+								echo '<a class="button" href="' . $btn['url_link']. '" target="_blank""><span>';
 							}
 							echo '' . $btn['button_text']. '';
 							echo '</span></a>';

@@ -24,6 +24,19 @@ body {
 /* # Slider
 --------------------------------------------------- */
 
+.full-width-content .gridcontainer.fullscreen.Black .slide_content h1 {
+	@include font(6.8, 6.8);
+}
+
+.full-width-content .gridcontainer.fullscreen.Black .slide_content h2 {
+	@include font(2.4, 2.4);
+}
+
+.full-width-content .gridcontainer.fullscreen.Black .slide_content h3 {
+	@include font(2.2, 2.2);
+	margin: 0 0 20px 0;
+}
+
 .slide_content h2{
 	max-width:1000px;
 }
@@ -33,6 +46,27 @@ body {
 	width:80%;
 	@include font(1.8, 2);
 }
+
+/* Countdown
+--------------------------------------------------- */
+
+div#countdown{
+	max-width:820px;
+}
+
+
+div#countdown span{
+	padding:20% 0;
+}
+
+span.numbers{
+	@include font(4.8, 4.8);
+}
+
+div.cd-box{
+	@include grid(4, 15, 820);
+}
+
 
 /* # Pin
 --------------------------------------------------- */

@@ -30,8 +30,13 @@
 .site-header .wrap {
 }
 
-.header-image .site-title > a {
-	background-position: center top;
+.title-area {
+	padding: 30px 0;
+}
+
+.title-area .site-title > a {
+	width: 250px;
+    height: 16px;
 }
 
 /* # Site Navigation
@@ -265,6 +270,46 @@
 
 .info {
 	max-height: 335px;
+}
+
+/* # Slider
+--------------------------------------------------- */
+
+.full-width-content .gridcontainer.fullscreen.Black .slide_content h1 {
+	@include font(4.8, 4.8);
+}
+
+.full-width-content .gridcontainer.fullscreen.Black .slide_content h2 {
+	@include font(2.0, 2.0);
+}
+
+.full-width-content .gridcontainer.fullscreen.Black .slide_content h3 {
+	@include font(1.8, 1.8);
+}
+
+.slide_content h2{
+	max-width:800px;
+}
+
+
+/* Countdown
+--------------------------------------------------- */
+
+div#countdown{
+	max-width:600px;
+}
+
+
+div#countdown span{
+	padding:20% 0;
+}
+
+span.numbers{
+	@include font(3.8, 3.8);
+}
+
+div.cd-box{
+	@include grid(4, 5, 600);
 }
 
 }
