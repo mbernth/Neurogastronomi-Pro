@@ -6000,7 +6000,7 @@ div.cd-box {
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(153, 204, 51, 0.9); }
+  background: #ffffff; }
 
 /* Overlay closing cross */
 .overlay .overlay-close {
@@ -6087,7 +6087,7 @@ html, body {
   transition: opacity 0.5s; }
 
 .overlay-contentpush {
-  background: #99cc33;
+  background: #ffffff;
   visibility: hidden;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;

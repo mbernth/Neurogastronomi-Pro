@@ -5,7 +5,7 @@
 	height: 100%;
 	top: 0;
 	left: 0;
-	background: rgba(153,204,51,0.9);
+	background: $color-white;
 }
 
 /* Overlay closing cross */
@@ -104,7 +104,7 @@ html, body {
 }
 
 .overlay-contentpush {
-	background: rgba(153,204,51,1);
+	background: $color-white;
 	visibility: hidden;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;

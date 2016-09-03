@@ -377,15 +377,24 @@ function mono_flexible_grids() {
 							echo '</section>';
 							}
 							
+							if (get_sub_field('push_article')){
+							echo '<section class="coll' . $coll. '">';
+								the_sub_field('push_article');
+								echo '<button id="trigger-overlay" type="button"><span>';
+									the_sub_field('push_button_text');
+								echo 'begin</span></button>';
+							echo '</section>';
+							}
+							
 							if (get_sub_field('google_map')){
 								
 								$location = get_sub_field('google_map');
 								
-							echo '<section class="coll' . $coll. '">';
+								echo '<section class="coll' . $coll. '">';
 								echo '<div class="acf-map">
 		 								<div class="marker" data-lat="'.$location['lat'].'" data-lng="'.$location['lng'].'"></div>
 		 							  </div>';
-							echo '</section>';
+								echo '</section>';
 							}
 							
 							if (get_sub_field('case_name')){
@@ -615,17 +624,25 @@ function mono_flexible_grids() {
 // =====================================================================================================================
 add_action( 'genesis_after', 'mono_push_content', 15 );
 function mono_push_content() {
-	$rows = get_field( 'push_content' );
-			
-		if($rows) {
-			
-			echo '<div class="overlay overlay-contentpush">';
-			echo '<button type="button" class="overlay-close">Close</button>';
-			echo '' . $rows. '';
-			echo '</div>';
-									  
-		}
-		
+	
+	
+	if( have_rows('content_row') ):
+		while ( have_rows('content_row') ) : the_row();
+			if( get_row_layout() == 'row_setup' ):
+				while ( have_rows('column') ) : the_row();
+				// $rows = get_field( 'push_content' );
+				//	if($rows) {
+					if (get_sub_field('push_article')){
+						echo '<div class="overlay overlay-contentpush"><div class="gridcontainer wysiwyg"><div class="wrap"><section class="coll1">';
+						echo '<button type="button" class="overlay-close">Close</button>';
+							the_sub_field('text_content');
+						echo '</section></div></div></div>';
+					}
+				//	}
+				endwhile;
+			endif;
+		endwhile;
+	endif;	
 }
 
 add_action( 'wp_enqueue_scripts', 'push_scripts_jquery' );
@@ -633,13 +650,11 @@ function push_scripts_jquery() {
 	$pushcontent = get_field('content_row');
 	$push = get_sub_field( 'push_content' );  //this is the ACF instruction to get everything in the repeater field
 		
-		if($pushcontent){
-		if(get_sub_field( 'push_content' )) {
+	if( have_rows('content_row') ):
 			wp_enqueue_script( 'push-modernizr-script', get_bloginfo( 'stylesheet_directory' ) . '/js/modernizr.custom.push.js', array( 'jquery' ), '1.0.0' );
-			wp_enqueue_script( 'classie-script', get_bloginfo( 'stylesheet_directory' ) . '/js/classie.js', array( 'jquery' ), '1.0.0', true );
-			wp_enqueue_script( 'push-script', get_stylesheet_directory_uri() . '/js/push.js', array( 'jquery' ), '1.0.0', true );
-		}
-		}
+			wp_enqueue_script( 'classie-push-script', get_bloginfo( 'stylesheet_directory' ) . '/js/classie.js', array( 'jquery' ), '1.0.0', true );
+			wp_enqueue_script( 'push-script-jquery', get_stylesheet_directory_uri() . '/js/push.js', array( 'jquery' ), '1.0.0', true );
+	endif;
 }
 
 
