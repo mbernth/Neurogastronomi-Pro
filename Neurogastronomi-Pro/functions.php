@@ -35,7 +35,6 @@ function genesis_sample_google_fonts() {
 	
 	wp_enqueue_script( 'mono-flip-jquery', get_bloginfo( 'stylesheet_directory' ) . '/js/jquery.min.js', array( 'jquery' ), '1.0.0' );
 	wp_enqueue_script( 'mono-modernizr', get_bloginfo( 'stylesheet_directory' ) . '/js/modernizr.min.js', array( 'jquery' ), '1.0.0' );
-	// wp_enqueue_script( 'mono-flip', get_bloginfo( 'stylesheet_directory' ) . '/js/flip.js', array( 'jquery' ), '1.0.0' );
 	wp_enqueue_script( 'mono-flip', get_bloginfo( 'stylesheet_directory' ) . '/js/mono_flip.js', array( 'jquery' ), '1.0.0' );
 	wp_enqueue_script( 'moono-timeline', get_bloginfo( 'stylesheet_directory' ) . '/js/timeline.js', array( 'jquery' ), '1.0.0' );
 	wp_enqueue_script( 'countdown', get_stylesheet_directory_uri() . '/js/countdown.js', array( 'jquery' ), '1.0.0' );
@@ -92,11 +91,6 @@ function neuro_favicon_filter( $favicon ) {
 	echo '<meta name="msapplication-wide310x150logo" content="'.get_bloginfo( 'stylesheet_directory' ).'/images//widetile.png" />';
 	echo '<meta name="msapplication-square310x310logo" content="'.get_bloginfo( 'stylesheet_directory' ).'/images//largetile.png" />';
 
-}
-//* Add custom meta tag for mobile browsers
-add_action( 'genesis_meta', 'neuro_typhography_link_tag' );
-function neuro_typhography_link_tag() {
-	echo '<link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7155452/782242/css/fonts.css" />';
 }
 
 //* Add svg upload
@@ -633,10 +627,10 @@ function mono_push_content() {
 				// $rows = get_field( 'push_content' );
 				//	if($rows) {
 					if (get_sub_field('push_article')){
-						echo '<div class="overlay overlay-contentpush"><div class="gridcontainer wysiwyg"><div class="wrap"><section class="coll1">';
-						echo '<button type="button" class="overlay-close">Close</button>';
+						echo '<div class="overlay overlay-contentpush">';
+						echo '<button type="button" class="overlay-close">Close</button><section>';
 							the_sub_field('text_content');
-						echo '</section></div></div></div>';
+						echo '</section></div>';
 					}
 				//	}
 				endwhile;
@@ -651,9 +645,17 @@ function push_scripts_jquery() {
 	$push = get_sub_field( 'push_content' );  //this is the ACF instruction to get everything in the repeater field
 		
 	if( have_rows('content_row') ):
+	while ( have_rows('content_row') ) : the_row();
+		if( get_row_layout() == 'row_setup' ){
+		while ( have_rows('column') ) : the_row();
+		if (get_sub_field('push_article')){
 			wp_enqueue_script( 'push-modernizr-script', get_bloginfo( 'stylesheet_directory' ) . '/js/modernizr.custom.push.js', array( 'jquery' ), '1.0.0' );
 			wp_enqueue_script( 'classie-push-script', get_bloginfo( 'stylesheet_directory' ) . '/js/classie.js', array( 'jquery' ), '1.0.0', true );
 			wp_enqueue_script( 'push-script-jquery', get_stylesheet_directory_uri() . '/js/push.js', array( 'jquery' ), '1.0.0', true );
+		}
+		endwhile;
+		}
+	endwhile;
 	endif;
 }
 

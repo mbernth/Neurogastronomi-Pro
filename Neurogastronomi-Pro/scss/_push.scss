@@ -8,7 +8,43 @@
 	background: $color-white;
 }
 
-/* Overlay closing cross */
+.overlay section {
+	position:fixed;
+	height:90%;
+	padding:6% 8%;
+	width:100%;
+	margin:0;
+	overflow:scroll;
+	z-index:100;
+}
+
+.overlay section ul.gform_fields{
+	width:100%;
+}
+
+.overlay section .gform_wrapper input[type=text]{
+	height:40px;
+}
+.overlay section .gform_wrapper,
+.overlay section .gform_wrapper ul li.gfield {
+	margin-top:0;
+}
+.overlay section .gform_wrapper{
+	margin-bottom:0;
+}
+.overlay section .gform_wrapper li{
+	margin-bottom:30px;
+}
+.overlay section .gform_wrapper .field_sublabel_below .ginput_complex.ginput_container label{
+	margin-bottom:0;
+}
+
+.overlay section .gform_wrapper .gform_footer{
+	margin-top:0px;
+	padding-top:0px;
+}
+
+/* Overlay closing cross
 .overlay .overlay-close {
 	width: 80px;
 	height: 80px;
@@ -22,6 +58,56 @@
 	color: transparent;
 	outline: none;
 	z-index: 100;
+} */
+
+
+$nav-height: 35px;
+$t: 400ms;
+
+.overlay .overlay-close {
+  position: absolute;
+  top:40px;
+  right:40px;
+  height: 60px;
+  width:60px;
+  background-color: transparent;
+  text-indent: -999px;
+  transform: rotate(0deg);
+  transition: all ease $t;
+  opacity: 1;
+  margin-top: 0;
+  z-index:500;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 27px;
+	left:-10px;
+    height: 5px;
+    width: 80px;
+    background-color: $color-grey;
+    transform: rotate(45deg);
+    transition: all ease $t;
+		&:hover {
+			background-color:$color-black;
+		}
+  }
+  
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 27px;
+	left:-10px;
+    height: 5px;
+    width: 80px;
+    background-color: $color-grey;
+    
+    transform: rotate(-45deg);
+    transition: all ease $t;
+  }
+  
 }
 
 /* Menu style */

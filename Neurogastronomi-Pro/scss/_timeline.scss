@@ -8,11 +8,11 @@
 	margin-top:0px;
 	float:right;
 }
-
+/*
 .site-inner .gridcontainer .cd-timeline-block:nth-child(even) .cd-timeline-content .button {
 	float:left;
 }
-
+*/
 
 .gridcontainer .cd-timeline-content a.button {
 	@include font(1.4, 2.2);
@@ -295,6 +295,10 @@
   .cd-timeline-block:nth-child(even) .cd-timeline-content {
     float: right;
   }
+  
+  .site-inner .gridcontainer .cd-timeline-block:nth-child(even) .cd-timeline-content .button {
+	float:left;
+  }
   .cd-timeline-block:nth-child(even) .cd-timeline-content::before {
     top: 24px;
     left: auto;
@@ -315,18 +319,18 @@
   }
   .cssanimations .cd-timeline-content.bounce-in {
     visibility: visible;
-    -webkit-animation: cd-bounce-2 0.6s;
-    -moz-animation: cd-bounce-2 0.6s;
-    animation: cd-bounce-2 0.6s;
+    -webkit-animation: cd-bounce-2 1s;
+    -moz-animation: cd-bounce-2 1s;
+    animation: cd-bounce-2 1s;
   }
 }
 
 @media only screen and (min-width: 1170px) {
   /* inverse bounce effect on even content blocks */
   .cssanimations .cd-timeline-block:nth-child(even) .cd-timeline-content.bounce-in {
-    -webkit-animation: cd-bounce-2-inverse 2s;
-    -moz-animation: cd-bounce-2-inverse 2s;
-    animation: cd-bounce-2-inverse 2s;
+    -webkit-animation: cd-bounce-2-inverse 1s;
+    -moz-animation: cd-bounce-2-inverse 1s;
+    animation: cd-bounce-2-inverse 1s;
   }
 }
 @-webkit-keyframes cd-bounce-2 {
