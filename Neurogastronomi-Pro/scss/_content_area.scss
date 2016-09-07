@@ -447,12 +447,12 @@ li.comment {
 
 .featured-image .site-header {
 	margin-top:0px;
-	background-color: transparent;
+	background-color: $color-primary-one;
 }
 
 .featured-image .site-header.dark {
 	margin-top:0px;
-	background-color: $color-grey;
+	background-color: $color-primary-one;
 }
 
 .featured-section {

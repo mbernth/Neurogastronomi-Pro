@@ -63,6 +63,12 @@ function child_do_doctype() {
     <?php
 }
 
+//* Add Google site verification
+add_action( 'genesis_meta', 'neuro_google_site_verification' );
+function neuro_google_site_verification() {
+	echo '<meta name="google-site-verification" content="BNzXm09PJYXL_zxeCxRyOZKgvJ0gIaeYTH4Ht5vdwjA" />';
+}
+
 //* Add custom meta tag for mobile browsers
 add_action( 'genesis_meta', 'neuro_viewport_meta_tag' );
 function neuro_viewport_meta_tag() {
@@ -463,7 +469,9 @@ function mono_flexible_grids() {
 			
 			if( get_row_layout() == 'full_screen_image' ):
 				$btn = get_sub_field ( 'full_screen_button' );
-						
+				
+				if (get_sub_field ( 'hide_full_screen_image' )){
+				}else{
 				echo '<article class="gridcontainer fullscreen Black">
 					<div class="featured-section" style="background-image:url('; 
 					the_sub_field('full_screen_back_image');
@@ -487,6 +495,7 @@ function mono_flexible_grids() {
 						}
 					
 				echo '</div></div></div></article>';
+				}
 			endif;
 			
 			/* 

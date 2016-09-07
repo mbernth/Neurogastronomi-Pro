@@ -6199,7 +6199,7 @@ html, body {
   margin-top: 0px;
   width: 100%;
   float: left;
-  background-color: #dfe1df;
+  background-color: #1d2029;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -ms-transition: all 0.5s ease-in-out;
@@ -7298,11 +7298,11 @@ li.comment {
 --------------------------------------------- */
 .featured-image .site-header {
   margin-top: 0px;
-  background-color: transparent; }
+  background-color: #1d2029; }
 
 .featured-image .site-header.dark {
   margin-top: 0px;
-  background-color: #dfe1df; }
+  background-color: #1d2029; }
 
 .featured-section {
   margin-top: 0px;
