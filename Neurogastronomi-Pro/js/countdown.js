@@ -69,7 +69,7 @@ $(document).ready(function(){
 		}
 		//
 		$("#countdown").countdown({
-			date: "23 october 2016 23:59:59", // change date/time here - do not change the format!
+			date: "4 november 2016 23:59:59", // change date/time here - do not change the format!
 			format: "on"
 		});
 	});
