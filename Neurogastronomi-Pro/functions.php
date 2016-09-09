@@ -694,7 +694,7 @@ function single_post_featured_image() {
 		printf( '<div class="featured-section" style="background-image:url(%s);"><div class="image-section"></div></div>', $img );
 		
 		elseif( (! is_front_page()) ):
-		printf( '<div class="image-section" style="background-color:#231f20;"></div>', $img );
+		// printf( '<div class="image-section" style="background-color:#231f20;"></div>', $img );
 		
 		
 	endif;
