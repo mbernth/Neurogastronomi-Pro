@@ -351,6 +351,7 @@ function mono_flexible_grids() {
 							}
 							
 							if (get_sub_field('image_link')){
+								$btn = get_sub_field ( 'image_button' );
 								
 								if( get_sub_field('content') && $selected == 'Non'  || $selected == 'Non Black'  || $selected == 'Non Red'  || $selected == 'Non Grey') {
 									
@@ -365,6 +366,17 @@ function mono_flexible_grids() {
 										echo '<img src="';
 											the_sub_field('image_link');
 										echo '">';
+										
+										if ($btn['button_text']){
+											if ($btn['page_link']){
+												echo '<a class="button" href="' . $btn['page_link']. '"><span>';
+											}else{
+												echo '<a class="button" href="' . $btn['url_link']. '" target="_blank""><span>';
+											}
+											echo '' . $btn['button_text']. '';
+											echo '</span></a>';
+										}
+						
 									echo '</section>';
 										
 								}
