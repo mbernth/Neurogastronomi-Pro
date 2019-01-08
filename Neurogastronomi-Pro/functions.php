@@ -9,7 +9,7 @@ include_once( get_stylesheet_directory() . '/lib/svg_icons.php' );
 include_once( get_stylesheet_directory() . '/lib/theme-defaults.php' );
 
 //* Setup extended search to include ACF content
-include_once( get_stylesheet_directory() . '/lib/custom-search-acf-wordpress.php' );
+// include_once( get_stylesheet_directory() . '/lib/custom-search-acf-wordpress.php' );
 
 //* Set Localization (do not remove)
 load_child_theme_textdomain( 'neuro', apply_filters( 'child_theme_textdomain', get_stylesheet_directory() . '/languages', 'neuro' ) );
